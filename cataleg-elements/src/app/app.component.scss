@@ -1,0 +1,31 @@
+.contenidor {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    header h1 {
+      margin: 0 0 8px 0;
+      color: #1976d2;
+    }
+    header p {
+      margin: 0;
+      color: #666;
+    }
+    .info-resultats {
+      background: #e3f2fd;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
+    .info-resultats p {
+      margin: 0;
+      color: #1976d2;
+    }
+    .info-resultats em {
+      font-style: normal;
+      font-weight: 600;
+    }

@@ -1,0 +1,42 @@
+.targeta {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+    .targeta:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .targeta-imatge {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .targeta-contingut {
+      padding: 16px;
+    }
+    .targeta-contingut h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.25rem;
+    }
+    .targeta-contingut p {
+      margin: 0 0 12px 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .targeta-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+    .categoria {
+      background: #e3f2fd;
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: #1976d2;
+    }
+    .valoracio {
+      color: #f57c00;
+      font-weight: 500;
+    }
