@@ -1,0 +1,54 @@
+{
+  "elements": [
+    {
+      "id": "elem-001",
+      "nom": "Placa Arduino Uno R3",
+      "descripcio": "Microcontrolador amb processador ATmega328P",
+      "categoria": "Electronics",
+      "preu": 24.99,
+      "imatge": "https://via.placeholder.com/300x200?text=Arduino",
+      "popular": true,
+      "stock": 45
+    },
+    {
+      "id": "elem-002",
+      "nom": "Sensor ultrasònic HC-SR04",
+      "descripcio": "Sensor de distància per mesura d'obstacles",
+      "categoria": "Sensors",
+      "preu": 3.50,
+      "imatge": "https://via.placeholder.com/300x200?text=Sensor",
+      "popular": true,
+      "stock": 120
+    },
+    {
+      "id": "elem-003",
+      "nom": "Motor pas a pas NEMA 17",
+      "descripcio": "Motor de precisió per projectes de robòtica",
+      "categoria": "Motors",
+      "preu": 18.75,
+      "imatge": "https://via.placeholder.com/300x200?text=Motor",
+      "popular": true,
+      "stock": 32
+    },
+    {
+      "id": "elem-004",
+      "nom": "Pantalla LCD 16x2",
+      "descripcio": "Pantalla de text amb retroil·luminació blava",
+      "categoria": "Displays",
+      "preu": 8.99,
+      "imatge": "https://via.placeholder.com/300x200?text=LCD",
+      "popular": false,
+      "stock": 67
+    },
+    {
+      "id": "elem-005",
+      "nom": "Mòdul Bluetooth HC-05",
+      "descripcio": "Comunicació sense fils per Arduino i Raspberry Pi",
+      "categoria": "Communication",
+      "preu": 6.25,
+      "imatge": "https://via.placeholder.com/300x200?text=Bluetooth",
+      "popular": true,
+      "stock": 89
+    }
+  ]
+}
