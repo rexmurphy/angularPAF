@@ -1,0 +1,63 @@
+<div class="cataleg-page">
+    <header class="page-header">
+        <h1>Catàleg d'Elements</h1>
+        <p class="subtitle">Elements populars del nostre catàleg</p>
+    </header>
+
+    <app-formulari-cerca />
+
+
+
+    <!-- Estat: Carregant -->
+    <div class="estat-carregant" *ngIf="elementService.estat() === 'carregant'">
+        <div class="spinner"></div>
+        <p>Carregant elements...</p>
+    </div>
+
+    <!-- Estat: Error -->
+    <div class="estat-error" *ngIf="elementService.estat() === 'error'">
+        <div class="error-icon">⚠️</div>
+        <h2>Error al carregar elements</h2>
+        <p class="error-missatge">{{ elementService.error() }}</p>
+        <button class="btn-reintentar" (click)="reintentar()">
+            Reintentar
+        </button>
+    </div>
+
+    <!-- Estat: Èxit (elements carregats) -->
+    <div class="estat-exit" *ngIf="elementService.estat() === 'exit'">
+        <!-- Missatge si no hi ha elements -->
+        <div class="sense-resultats" *ngIf="elementService.elements().length === 0">
+            <p>No s'han trobat elements populars</p>
+        </div>
+
+        <!-- Llistat d'elements -->
+        <div class="elements-grid" *ngIf="elementService.elements().length > 0">
+            <div class="element-card" *ngFor="let element of elementService.elements()">
+                <img [src]="element.imatge" [alt]="element.nom" class="element-imatge">
+
+                <button class="btn-preferit" [class.actiu]="preferitsService.esPreferit(element.id)"
+                    (click)="togglePreferit(element)">
+                    {{ preferitsService.esPreferit(element.id) ? '★' : '☆' }}
+                </button>
+
+                <div class="element-info">
+                    <h3 class="element-nom">{{ element.nom }}</h3>
+                    <p class="element-categoria">{{ element.categoria }}</p>
+                    <p class="element-descripcio">{{ element.descripcio }}</p>
+                    <div class="element-footer">
+                        <span class="element-preu">{{ element.preu | number:'1.2-2' }}€</span>
+                        <span class="element-stock" [class.baix-stock]="element.stock < 20">
+                            Stock: {{ element.stock }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Estat: Inicial (no s'ha carregat res encara) -->
+    <div class="estat-inicial" *ngIf="elementService.estat() === 'inicial'">
+        <p>Inicialitzant...</p>
+    </div>
+</div>

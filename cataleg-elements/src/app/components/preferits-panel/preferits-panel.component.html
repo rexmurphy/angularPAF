@@ -1,0 +1,45 @@
+<div class="preferits-panel">
+    <h2>Els meus preferits ({{ preferitsService.preferits().length }})</h2>
+
+    <!-- Llista de preferits -->
+    <div class="llista-preferits" *ngIf="preferitsService.preferits().length > 0">
+        <div class="preferit-item" *ngFor="let preferit of preferitsService.preferits()"
+            [class.seleccionat]="preferitSeleccionat?.elementId === preferit.elementId">
+            <div class="preferit-info" (click)="seleccionarPreferit(preferit)">
+                <h3>{{ preferit.elementNom }}</h3>
+                <p class="notes-count">{{ preferit.notes.length }} notes</p>
+                <p class="data-afegit">Afegit: {{ preferit.dataAfegit | date:'dd/MM/yyyy HH:mm' }}</p>
+            </div>
+            <button class="btn-eliminar" (click)="eliminarPreferit(preferit.elementId)">🗑️</button>
+        </div>
+    </div>
+
+    <!-- Missatge si no hi ha preferits -->
+    <div class="sense-preferits" *ngIf="preferitsService.preferits().length === 0">
+        <p>No tens preferits encara</p>
+        <p class="ajuda">Fes clic a l'estrella d'un element per afegir-lo als preferits</p>
+    </div>
+
+    <!-- Panel de notes (quan hi ha preferit seleccionat) -->
+    <div class="panel-notes" *ngIf="preferitSeleccionat">
+        <div class="notes-header">
+            <h3>Notes de: {{ preferitSeleccionat.elementNom }}</h3>
+            <button class="btn-tancar" (click)="tancarPanel()">✕</button>
+        </div>
+
+        <form [formGroup]="formulariNotes">
+            <div class="notes-llista" formArrayName="notes">
+                <div class="nota-item" *ngFor="let notaControl of notes.controls; let i = index">
+                    <input type="text" [formControlName]="i"
+                        [placeholder]="i === notes.length - 1 ? 'Escriu una nova nota...' : 'Nota ' + (i + 1)"
+                        class="input-nota" [class.invalid]="notaControl.invalid && notaControl.touched">
+                    <button type="button" class="btn-eliminar-nota" (click)="eliminarNota(i)"
+                        *ngIf="i < notes.length - 1">✕</button>
+                </div>
+            </div>
+
+            <button type="button" class="btn-afegir-nota" (click)="afegirNota()"
+                [disabled]="notes.at(notes.length - 1).invalid">Afegir nota</button>
+        </form>
+    </div>
+</div>
