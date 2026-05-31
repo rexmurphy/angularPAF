@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {TargetaElementComponent} from "../targeta-element/targeta-element.component";
-import {Element} from "../../models/element";
+import {ElementCataleg} from "../../models/element.model";
 
 @Component({
   selector: 'app-llista-components',
@@ -11,10 +11,7 @@ import {Element} from "../../models/element";
   styleUrl: './llista-components.component.scss'
 })
 export class LlistaComponentsComponent {
-  @Input({required:true}) elements: Element[]=[];
+  @Input({required:true}) elements: ElementCataleg[]=[];
 
-  trackById(index: number, element: Element): number {
-    return element.id;
-  }
 
 }

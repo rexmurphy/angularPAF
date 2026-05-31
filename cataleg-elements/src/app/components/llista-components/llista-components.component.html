@@ -3,8 +3,10 @@
         <p class="missatge">No hi ha elements per mostrar</p>
     </div>
     <div *ngIf="elements.length>0" class="graella">
-        <app-targeta-element *ngFor="let element of elements; trackBy: trackById" [element]="element">
+        <app-targeta-element *ngFor="let element of elements" [element]="element">
         </app-targeta-element>
     </div>
     
 </section>
+
+

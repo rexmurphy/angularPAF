@@ -3,15 +3,7 @@
         <h1>Cataleg d'Elements </h1>
 
     </header>
-    <app-barra-cerca (cercaCanviada)="filtrarElements($event)"></app-barra-cerca>
+    
 
-    <div *ngIf="textCercaActual" class="info-resultats" aria-live="polita">
-        <p>
-            <strong>{{ elementsFiltrats.length }}</strong>
-            {{ elementsFiltrats.length === 1 ? 'resultat' : 'resultats' }}
-            per <em>"{{ textCercaActual }}"</em>
-        </p>
-    </div>
-
-    <app-llista-components [elements]="elementsFiltrats"></app-llista-components>
+    <app-llista-components [elements]="elementService.elements()"></app-llista-components>
 </main>

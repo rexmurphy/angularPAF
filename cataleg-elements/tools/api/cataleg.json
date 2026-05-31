@@ -37,7 +37,7 @@
       "categoria": "Displays",
       "preu": 8.99,
       "imatge": "https://via.placeholder.com/300x200?text=LCD",
-      "popular": false,
+      "popular": true,
       "stock": 67
     },
     {

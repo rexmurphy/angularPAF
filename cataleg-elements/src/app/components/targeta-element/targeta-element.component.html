@@ -1,15 +1,15 @@
 <article class="targeta">
-    <img [src]="element.imatge || 'assets/placeholder.png'" [alt]="element.titol" class="targeta-imatge">
+    <img [src]="element.imatge || 'assets/placeholder.png'" [alt]="element.nom" class="targeta-imatge">
     <div class="targeta-contingut">
-        <h3>{{ element.titol }}</h3>
+        <h3>{{ element.nom }}</h3>
         <p>{{ element.descripcio }}</p>
         <div class="targeta-info">
           <span *ngIf="element.categoria" class="categoria">
             {{ element.categoria }}
           </span>
-          <span *ngIf="element.valoracio" class="valoracio">
-            <i class="bi bi-star-fill" aria-hidden="true"></i>
-            {{ element.valoracio }}
+          <span *ngIf="element.preu" class="valoracio">
+            <i class="bi bi-tag-fill" aria-hidden="true"></i>
+            {{ element.preu | currency:'EUR' }}
           </span>
         </div>
     </div>

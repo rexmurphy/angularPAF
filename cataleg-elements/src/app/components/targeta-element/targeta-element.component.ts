@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Element } from '../../models/element';
+import { ElementCataleg } from '../../models/element.model';
 
 @Component({
   selector: 'app-targeta-element',
@@ -10,6 +10,6 @@ import { Element } from '../../models/element';
   styleUrl: './targeta-element.component.scss'
 })
 export class TargetaElementComponent {
-  @Input({ required: true }) element!: Element;
+  @Input({ required: true }) element!: ElementCataleg
 }
 
